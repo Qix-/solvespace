@@ -41,6 +41,10 @@ typedef uint32_t Slvs_hGroup;
  * an entity, specify this instead of the workplane. */
 #define SLVS_FREE_IN_3D         0
 
+#ifdef LIBSLVS_GLOBAL_ERROR
+const char *Slvs_GetLastError();
+#endif
+
 typedef struct {
     Slvs_hParam     h;
     Slvs_hGroup     group;

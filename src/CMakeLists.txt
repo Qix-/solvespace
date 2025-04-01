@@ -92,6 +92,10 @@ set_target_properties(slvs PROPERTIES POSITION_INDEPENDENT_CODE ON)
 target_compile_definitions(slvs PRIVATE -DLIBRARY)
 target_link_libraries(slvs PRIVATE mimalloc-static)
 
+if(LIBSLVS_GLOBAL_ERROR)
+    target_compile_definitions(slvs PRIVATE -DLIBSLVS_GLOBAL_ERROR)
+endif()
+
 target_include_directories(slvs
     PRIVATE
         ${MIMALLOC_INCLUDE_DIR}
