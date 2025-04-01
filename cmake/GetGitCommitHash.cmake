@@ -1,4 +1,8 @@
 function(get_git_commit_hash)
+    if(DEFINED GIT_COMMIT_HASH)
+        return()
+    endif()
+
     get_filename_component(GIT_DESCRIBE_CMAKE_DIR ${CMAKE_CURRENT_LIST_FILE} PATH)
     get_filename_component(GIT_ROOT ${GIT_DESCRIBE_CMAKE_DIR} PATH)
     set(GIT_DIR "${GIT_ROOT}/.git")
